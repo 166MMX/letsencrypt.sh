@@ -14,4 +14,4 @@ addons:
             - shellcheck
 
 script:
-    - shellcheck -- letsencrypt.sh
+    - shellcheck -s sh letsencrypt.sh
