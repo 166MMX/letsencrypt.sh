@@ -10,6 +10,10 @@ addons:
 
 env:
     - VERSION="v0.4.3"
+    - VERSION="v0.4.2"
+    - VERSION="v0.4.1"
+    - VERSION="v0.4.0"
+    - VERSION="v0.3.8"
 
 branches:
     only:
