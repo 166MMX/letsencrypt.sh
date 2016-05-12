@@ -1,36 +1,17 @@
+os:
+  - osx
+
 sudo: false
 
 language: shell
-
-addons:
-  apt:
-    packages:
-    - ghc
-    - cabal-install
-
-env:
-    - VERSION="v0.4.3"
-    - VERSION="v0.4.2"
-    - VERSION="v0.4.1"
-    - VERSION="v0.4.0"
-    - VERSION="v0.3.8"
 
 branches:
     only:
         - 166MMX-patch-1
 
-before_script:
-    - export PATH="$HOME/.cabal/bin:$PATH"
-    - ghc --version
-    - cabal --version
-    - cabal update
-    - git clone 'https://github.com/koalaman/shellcheck.git'
-    - cd shellcheck
-    - git checkout "$VERSION"
-    - cabal install --only-dependencies 
-    - cabal configure
-    - cabal build
-    - cabal install
+before_install:
+  - brew update
+  - brew install shellcheck
 
 script:
     - shellcheck -s sh letsencrypt.sh
