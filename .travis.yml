@@ -9,6 +9,7 @@ addons:
     - cabal-install
 
 env:
+    - SHELLCHECK_VERSION="v0.4.3"
     - PATH="$HOME/.cabal/bin:$PATH"
 
 branches:
@@ -18,7 +19,8 @@ branches:
 before_script:
     - cabal update
     - git clone 'https://github.com/koalaman/shellcheck.git'
-    - cd shellcheck
+    - cd -- shellcheck
+    - git checkout -- "$SHELLCHECK_VERSION"
     - cabal install
 
 script:
