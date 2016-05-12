@@ -19,12 +19,11 @@ before_script:
     - export PATH="$HOME/.cabal/bin:$PATH"
     - ghc --version
     - cabal --version
-    - travis_retry cabal update
     - cabal update
     - git clone 'https://github.com/koalaman/shellcheck.git'
-    - cd -- shellcheck
-    - git checkout "$VERSION" --
-    - cabal --only-dependencies 
+    - cd shellcheck
+    - git checkout "$VERSION"
+    - cabal install --only-dependencies 
     - cabal configure
     - cabal build
     - cabal install
