@@ -9,8 +9,7 @@ addons:
     - cabal-install
 
 env:
-    - SHELLCHECK_VERSION="v0.4.3"
-    - PATH="$HOME/.cabal/bin:$PATH"
+    - SHELLCHECK_VERSION="v0.4.3" PATH="$HOME/.cabal/bin:$PATH"
 
 branches:
     only:
