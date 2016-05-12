@@ -16,9 +16,10 @@ branches:
         - 166MMX-patch-1
 
 before_script:
-    - git clone 'https://github.com/koalaman/shellcheck.git' shellcheck
-    - cd shellcheck; cabal update; cabal install
-    - which shellcheck
+    - cabal update
+    - git clone 'https://github.com/koalaman/shellcheck.git'
+    - cd shellcheck
+    - cabal install
 
 script:
     - shellcheck -s sh letsencrypt.sh
