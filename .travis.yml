@@ -1,10 +1,17 @@
 sudo: false
+
 language: shell
 
-cache:
-  directories:
-    - ngrok
+branches:
+    only:
+        - 166MMX-patch-1
+
+addons:
+    apt:
+        sources:
+            - debian-sid    # Grab shellcheck from the Debian repo (o_O)
+        packages:
+            - shellcheck
 
 script:
-  - export CI="true"
-  - ./test.sh
+    - shellcheck -- letsencrypt.sh
