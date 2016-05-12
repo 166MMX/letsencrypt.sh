@@ -19,7 +19,7 @@ before_script:
     - cabal update
     - git clone 'https://github.com/koalaman/shellcheck.git'
     - cd -- shellcheck
-    - git checkout -- "$SHELLCHECK_VERSION"
+    - git checkout "$SHELLCHECK_VERSION" --
     - cabal install
 
 script:
