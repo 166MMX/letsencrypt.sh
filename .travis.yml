@@ -17,7 +17,7 @@ branches:
 
 before_script:
     - git clone 'https://github.com/koalaman/shellcheck.git' shellcheck
-    - cd shellcheck; cabal install
+    - cd shellcheck; cabal update; cabal install
     - which shellcheck
 
 script:
