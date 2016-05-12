@@ -1,6 +1,6 @@
 sudo: false
 
-language: sh
+language: haskell
 
 env:
     - PATH="$HOME/.cabal/bin:$PATH"
