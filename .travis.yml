@@ -3,7 +3,7 @@ sudo: false
 language: sh
 
 env:
-    - PATH: '$HOME/.cabal/bin:$PATH'
+    - PATH="$HOME/.cabal/bin:$PATH"
 
 branches:
     only:
