@@ -9,17 +9,22 @@ addons:
     - cabal-install
 
 env:
-    - SHELLCHECK_VERSION="v0.4.3" PATH="$HOME/.cabal/bin:$PATH"
+    - VERSION="v0.4.3"
 
 branches:
     only:
         - 166MMX-patch-1
 
 before_script:
+    - export PATH="$HOME/.cabal/bin:$PATH"
+    - ghc --version
+    - cabal --version
+    - travis_retry cabal update
     - cabal update
     - git clone 'https://github.com/koalaman/shellcheck.git'
     - cd -- shellcheck
-    - git checkout "$SHELLCHECK_VERSION" --
+    - git checkout "$VERSION" --
+    - cabal --only-dependencies 
     - cabal configure
     - cabal build
     - cabal install
