@@ -1,6 +1,8 @@
 sudo: false
 
-language: haskell
+language: sh
+
+ghc: 7.8
 
 env:
     - PATH="$HOME/.cabal/bin:$PATH"
