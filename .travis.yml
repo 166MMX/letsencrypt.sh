@@ -1,17 +1,20 @@
 sudo: false
 
-language: shell
+language: sh
+
+env:
+    - PATH: '$HOME/.cabal/bin:$PATH'
 
 branches:
     only:
         - 166MMX-patch-1
 
-addons:
-    apt:
-        sources:
-            - debian-sid    # Grab shellcheck from the Debian repo (o_O)
-        packages:
-            - shellcheck
+before_script:
+    - git clone 'https://github.com/koalaman/shellcheck.git' shellcheck
+    - cd shellcheck; cabal install
+    - which shellcheck
 
 script:
     - shellcheck -s sh letsencrypt.sh
+
+
