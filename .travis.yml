@@ -2,7 +2,11 @@ sudo: false
 
 language: sh
 
-ghc: 7.8
+addons:
+  apt:
+    sources:
+    - ghc
+    - cabal-install
 
 env:
     - PATH="$HOME/.cabal/bin:$PATH"
@@ -18,5 +22,3 @@ before_script:
 
 script:
     - shellcheck -s sh letsencrypt.sh
-
-
