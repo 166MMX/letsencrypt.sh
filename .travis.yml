@@ -4,7 +4,7 @@ language: sh
 
 addons:
   apt:
-    sources:
+    packages:
     - ghc
     - cabal-install
 
